@@ -1,0 +1,202 @@
+[
+    {
+        "title": "Green Leaf Landscaping",
+        "subtitle": "Bringing Nature to Your Doorstep",
+        "description": "Expert landscaping services that transform your outdoor spaces. Lawn care, garden design, and maintenance to keep your yard looking beautiful year-round.",
+        "phone": "0523456789",
+        "email": "info@greenleaflandscaping.co.il",
+        "web": "https://www.greenleaflandscaping.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Tel Aviv",
+            "street": "Yarkon",
+            "houseNumber": 15,
+            "zip": 1234567
+        }
+    },
+    {
+        "title": "Tech Solutions Ltd.",
+        "subtitle": "Innovative IT Solutions",
+        "description": "Providing cutting-edge IT solutions for businesses. From software development to network security, we help companies thrive in the digital world.",
+        "phone": "0529876543",
+        "email": "contact@techsolutions.co.il",
+        "web": "https://www.techsolutions.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Haifa",
+            "street": "Abba Hillel",
+            "houseNumber": 7,
+            "zip": 3421000
+        }
+    },
+    {
+        "title": "Fresh Bites Catering",
+        "subtitle": "Delicious Catering for Every Event",
+        "description": "Offering gourmet catering services for weddings, corporate events, and private parties. Fresh, tasty, and tailored to your needs.",
+        "phone": "0501234567",
+        "email": "info@freshbites.co.il",
+        "web": "https://www.freshbites.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Jerusalem",
+            "street": "King George",
+            "houseNumber": 20,
+            "zip": 9100000
+        }
+    },
+    {
+        "title": "Clean & Shine",
+        "subtitle": "Your Cleaning Service Experts",
+        "description": "Providing professional cleaning services for homes and offices. Let us do the hard work so you can enjoy a clean and comfortable environment.",
+        "phone": "0507654321",
+        "email": "clean@shine.co.il",
+        "web": "https://www.cleanandshine.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Rishon Lezion",
+            "street": "Yigal Alon",
+            "houseNumber": 12,
+            "zip": 7510000
+        }
+    },
+    {
+        "title": "Fitness Pro",
+        "subtitle": "Your Personal Fitness Trainer",
+        "description": "Get in shape with our expert personal training services. Whether it's weight loss, strength building, or endurance training, we have a plan for you.",
+        "phone": "0534567890",
+        "email": "info@fitnesspro.co.il",
+        "web": "https://www.fitnesspro.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Petah Tikva",
+            "street": "Rothschild Blvd.",
+            "houseNumber": 33,
+            "zip": 4932000
+        }
+    },
+    {
+        "title": "Artistic Creations",
+        "subtitle": "Custom Art for Your Home",
+        "description": "Beautiful and unique art pieces crafted to match your personal style. Commission your own custom artwork for your home or office.",
+        "phone": "0541239876",
+        "email": "info@artisticcreations.co.il",
+        "web": "https://www.artisticcreations.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Tel Aviv",
+            "street": "Dizengoff",
+            "houseNumber": 10,
+            "zip": 6436300
+        }
+    },
+    {
+        "title": "Luxury Living Real Estate",
+        "subtitle": "Find Your Dream Home",
+        "description": "Specializing in luxury properties, our real estate services help you find your perfect home. From beachfront villas to city penthouses, we have it all.",
+        "phone": "0521122334",
+        "email": "contact@luxuryliving.co.il",
+        "web": "https://www.luxuryliving.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Tel Aviv",
+            "street": "Herzl",
+            "houseNumber": 45,
+            "zip": 6712000
+        }
+    },
+    {
+        "title": "Baker's Delight",
+        "subtitle": "Fresh Baked Goods Daily",
+        "description": "Fresh, handmade baked goods made with love and passion. From bread and pastries to cakes and cookies, enjoy the finest bakery treats.",
+        "phone": "0548765432",
+        "email": "info@bakersdelight.co.il",
+        "web": "https://www.bakersdelight.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Haifa",
+            "street": "Hof Hacarmel",
+            "houseNumber": 5,
+            "zip": 3301000
+        }
+    },
+    {
+        "title": "TechnoFix",
+        "subtitle": "Your Gadget Repair Experts",
+        "description": "We specialize in repairing electronics, gadgets, and appliances. Quick, reliable, and affordable repair services for all your devices.",
+        "phone": "0537654321",
+        "email": "support@technofix.co.il",
+        "web": "https://www.technofix.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Ashkelon",
+            "street": "Ha’atzmaut",
+            "houseNumber": 25,
+            "zip": 7894000
+        }
+    },
+    {
+        "title": "Shine Car Wash",
+        "subtitle": "Professional Car Cleaning",
+        "description": "High-quality car cleaning services, from exterior washes to interior detailing. Keep your vehicle shining inside and out.",
+        "phone": "0549876543",
+        "email": "info@shinecarwash.co.il",
+        "web": "https://www.shinecarwash.co.il",
+        "image": {
+            "url": "",
+            "alt": ""
+        },
+        "address": {
+            "state": "IL",
+            "country": "Israel",
+            "city": "Eilat",
+            "street": "Negev",
+            "houseNumber": 9,
+            "zip": 8800000
+        }
+    }
+]

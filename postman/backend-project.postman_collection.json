@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "58dc4483-de9c-40ab-bcdb-3c87a76c60b8",
+		"name": "backend-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24335674"
+	},
+	"item": [
+		{
+			"name": "getAllCards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/api/cards/654221720443ec28a252c270\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"cards",
+						"654221720443ec28a252c270\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get card by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": {\r\n    \"first\": \"sara\",\r\n    \"middle\": \"maria\",\r\n    \"last\": \"levy\"\r\n  },\r\n  \"phone\": \"0501234567\",\r\n  \"email\": \"sara.levy@email.com\",\r\n  \"password\": \"S@raLev1234!\",\r\n  \"image\": {\r\n    \"url\": \"https://example.com/images/sara.jpg\",\r\n    \"alt\": \"Profile picture of Sara Levy\"\r\n  },\r\n  \"address\": {\r\n    \"state\": \"Jerusalem\",\r\n    \"country\": \"Israel\",\r\n    \"city\": \"jerusalem\",\r\n    \"street\": \"King George\",\r\n    \"houseNumber\": 12,\r\n    \"zip\": 9342115\r\n  },\r\n  \"isBusiness\": false\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//    \"email\": \"ramy.assad@email.com\",\r\n//    \"password\": \"ramy1234!\"\r\n// }\r\n \"email\": \"sarah.smith@example.com\",\r\n        \"password\": \"Xyz!987Xyz\",\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create card",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk2NjYzNWQwMjkwNjQyMDAxMWIzYTYiLCJpYXQiOjE3Mzc5MTgzNzh9.vYuOfxXDlopRmFOzGvU5p1HjtsqPHPY4stZZ4BCe1gA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"TechVision Solutions\",\r\n    \"subtitle\": \"Innovative IT Solutions for Your Business\",\r\n    \"description\": \"Providing cutting-edge technology solutions to enhance your business operations. Specializing in software development, cloud computing, and IT consulting to help your business thrive in the digital age.\",\r\n    \"phone\": \"0531239876\",\r\n    \"email\": \"info@techvision.co.il\",\r\n    \"web\": \"https://www.techvision.co.il\",\r\n    \"image\": {\r\n        \"url\": \"https://www.techvision.co.il/images/logo.png\",\r\n        \"alt\": \"TechVision Solutions\"\r\n    },\r\n    \"address\": {\r\n        \"state\": \"IL\",\r\n        \"country\": \"Israel\",\r\n        \"city\": \"Haifa\",\r\n        \"street\": \"Herzl St.\",\r\n        \"houseNumber\": 22,\r\n        \"zip\": 3200000\r\n    }\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/cards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update card",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzhjODVmMDQ4NDM1Y2U0YjJhYmMwYjciLCJpYXQiOjE3MzczMTQwODR9.8YriIt1j3wdxMSrG1WuqHBwk2sR-_2FaGZ0ZHuYr8fg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"thee Business Card\",\r\n    \"subtitle\": \"Quality services since 2023\",\r\n    \"description\": \"We provide the best solutions for your business needs.\",\r\n    \"phone\": \"0520234567\",\r\n    \"email\": \"info@business.com\",\r\n    \"web\": \"https://www.business.com\",\r\n    \"image\": {\r\n        \"url\": \"https://www.example.com/image.jpg\",\r\n        \"alt\": \"Business logo\"\r\n    },\r\n    \"address\": {\r\n        \"state\": \"IL\",\r\n        \"country\": \"Israel\",\r\n        \"city\": \"Tel Aviv\",\r\n        \"street\": \"Herzl\",\r\n        \"houseNumber\": 15,\r\n        \"zip\": 1234567\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/cards/678c929148435ce4b2abc0c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"cards",
+						"678c929148435ce4b2abc0c1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like/unlike card",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete card",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzhjODVmMDQ4NDM1Y2U0YjJhYmMwYjciLCJpYXQiOjE3MzczMTQwODR9.8YriIt1j3wdxMSrG1WuqHBwk2sR-_2FaGZ0ZHuYr8fg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/cards/678c929148435ce4b2abc0c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"cards",
+						"678c929148435ce4b2abc0c1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzhjODVmMDQ4NDM1Y2U0YjJhYmMwYjciLCJpYXQiOjE3Mzc4NDIxMzl9.-ZBHUrtLKEGtTQHeBZYTXnkG0ldt6PbjBr4oRKLwnn0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3005/api/users/678c85f048435ce4b2abc0b7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"users",
+						"678c85f048435ce4b2abc0b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzhjODVmMDQ4NDM1Y2U0YjJhYmMwYjciLCJpYXQiOjE3Mzc4ODk4NjZ9.c9khWSzl9k3XzCGLnUFR7mrrBMImSfsBkx8qirAVk40",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {\r\n        \"first\": \"Ken\",\r\n        \"middle\": \"\",\r\n        \"last\": \"Saadi\"\r\n    },\r\n    \"phone\": \"0532865917\",\r\n\r\n    \"address\": {\r\n        \"state\": \"IL\",\r\n        \"country\": \"Israel\",\r\n        \"city\": \"Tel Aviv\",\r\n        \"street\": \"Dizengoff\",\r\n        \"houseNumber\": 5,\r\n        \"zip\": 8920435\r\n    },\r\n    \"image\": {\r\n        \"url\": \"\",\r\n        \"alt\": \"\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/users/678c85f048435ce4b2abc0b7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"users",
+						"678c85f048435ce4b2abc0b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "isBusiness",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk2NjYzNWQwMjkwNjQyMDAxMWIzYTYiLCJpYXQiOjE3Mzc5MTAwNjh9.HEcVcELMBVp3-Fk1SypqhlASqt0Elx8xbL-zkrOTHM8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/users/67966635d02906420011b3a4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"users",
+						"67966635d02906420011b3a4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/users/678c85f048435ce4b2abc0b7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"users",
+						"678c85f048435ce4b2abc0b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all my cards",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk2NjYzNWQwMjkwNjQyMDAxMWIzYTYiLCJpYXQiOjE3Mzc5MTgzNzh9.vYuOfxXDlopRmFOzGvU5p1HjtsqPHPY4stZZ4BCe1gA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3005/api/cards/my-cards/67966635d02906420011b3a4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"cards",
+						"my-cards",
+						"67966635d02906420011b3a4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
