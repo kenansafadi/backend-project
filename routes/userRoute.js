@@ -6,7 +6,6 @@ const router = express.Router();
 const { User } = require("../model/users");
 
 
-// GET - Get user by ID
 router.get("/:id", async (req, res) => {
     const user = await User.findById(req.params.id);
     if (!user) {
@@ -15,14 +14,12 @@ router.get("/:id", async (req, res) => {
     res.json(user);
 });
 
-// GET - Get all users
 router.get("/", async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
 
-// PUT - Update user details
-// PUT - Update user details
+
 router.put("/:id", async (req, res) => {
     const schema = Joi.object({
         name: Joi.object({
@@ -53,7 +50,6 @@ router.put("/:id", async (req, res) => {
     let user = await User.findById(req.params.id);
     if (!user) return res.status(404).send("User not found");
     console.log(user)
-    // Prevent overwriting `createdAt`
     const updatedData = _.omit(req.body, ["createdAt"]);
     Object.assign(user, updatedData);
 
@@ -61,39 +57,34 @@ router.put("/:id", async (req, res) => {
     res.json(_.pick(user, ["_id", "name", "phone", "address", "image", "isAdmin", "isBusiness"]));
 });
 router.patch("/:id", async (req, res) => {
-    console.log('Request Body:', req.body);  // Log entire body
-    console.log('isBusiness:', req.body.isBusiness);  // Log the isBusiness value
+    console.log('Request Body:', req.body);
+    console.log('isBusiness:', req.body.isBusiness);
 
     const user = await User.findById(req.params.id);
     if (!user) {
         return res.status(404).send("User not found");
     }
 
-    // Normalize and check isBusiness
     let isBusiness = req.body.isBusiness;
 
     if (typeof isBusiness === 'string') {
         console.log(`isBusiness is a string, parsing it: ${isBusiness}`);
-        isBusiness = isBusiness === 'true';  // Convert string 'true' to true, 'false' to false
+        isBusiness = isBusiness === 'true';
     }
 
-    console.log('Normalized isBusiness:', isBusiness);  // Log normalized value
+    console.log('Normalized isBusiness:', isBusiness);
 
-    // Check if isBusiness is a valid boolean value
     if (typeof isBusiness !== 'boolean') {
         return res.status(400).send('Invalid value for isBusiness');
     }
 
-    // Update the user's business status
     user.isBusiness = isBusiness;
 
-    // Save updated user
     await user.save();
     res.json(_.pick(user, ["_id", "name", "isBusiness"]));
 });
 
 
-// DELETE - Delete a user by ID
 router.delete("/:id", async (req, res) => {
     const user = await User.findByIdAndDelete(req.params.id);
     if (!user) {
