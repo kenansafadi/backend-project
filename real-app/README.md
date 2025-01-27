@@ -24,9 +24,7 @@ backend-project/
 שכפלו את הריפוזיטורי.
 הריצו את הפקודה npm install כדי להתקין את כל התלויות.
 צרו קובץ .env עם המשתנים הבאים:
-makefile
-Copy
-Edit
+
 JWT_KEY=המפתח_שלך_ל-JWT
 CONNECTION_ATLAS=חיבור_המונגו_שלך
 התחילו את השרת:
