@@ -1,10 +1,11 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
+// הגדרת סכמה למשתמש
 const userSchema = new mongoose.Schema({
     name: {
         first: { type: String, required: true, minlength: 2, maxlength: 255 },
-        middle: { type: String, maxlength: 255, default: "" },  // Optional and defaults to an empty string
+        middle: { type: String, maxlength: 255, default: "" },
         last: { type: String, required: true, minlength: 2, maxlength: 255 },
     },
     phone: {
@@ -22,13 +23,13 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        default: false,  // Password stored as a string
+        default: false,
         required: true,
-        minlength: 8,  // Enforce minimum length for password
+        minlength: 8,
     },
     image: {
-        url: { type: String, match: [/^https?:\/\/.+/, "Invalid URL format"], required: false, default: "" }, // Optional and defaults to an empty string
-        alt: { type: String, required: false, trim: true }, // Optional and defaults to an empty string
+        url: { type: String, match: [/^https?:\/\/.+/, "Invalid URL format"], required: false, default: "" },
+        alt: { type: String, required: false, trim: true },
     },
     address: {
         state: { type: String, default: "" },
@@ -43,22 +44,26 @@ const userSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
 });
 
+// יצירת מודל של המשתמש
+
 const User = mongoose.model("User", userSchema, "users");
+
+// פונקציה לוולידציה של נתוני משתמש באמצעות Joi
 
 function validateUser(user) {
     const schema = Joi.object({
         name: Joi.object({
             first: Joi.string().min(2).max(255).required(),
-            middle: Joi.string().max(255).allow(""), // Optional
+            middle: Joi.string().max(255).allow(""),
             last: Joi.string().min(2).max(255).required(),
-        }).required(),  // Make sure `name` is required
+        }).required(),
         phone: Joi.string().pattern(/^\d{10}$/).required(),
         email: Joi.string().email().min(6).max(255).required(),
         password: Joi.string().min(8).required(),
         image: Joi.object({
-            url: Joi.string().uri().allow("").default(""),  // Allow empty string for url
-            alt: Joi.string().max(255).allow("").default(""), // Allow empty string for alt
-        }).optional(), // image is optional
+            url: Joi.string().uri().allow("").default(""),
+            alt: Joi.string().max(255).allow("").default(""),
+        }).optional(),
         address: Joi.object({
             state: Joi.string().max(255).optional().allow(""),
             country: Joi.string().required(),

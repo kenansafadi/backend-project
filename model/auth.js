@@ -3,16 +3,16 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
 
-// Define the schema for Auth
+// הגדרת הסכימה עבור Auth
 const authSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true }
 });
 
-// Create the Auth model based on the schema
+// יצירת המודל Auth בהתבסס על הסכימה
 const Auth = mongoose.model('Auth', authSchema);
 
-// Validate the Auth input
+// ולידציה לנתוני הקלט של Auth
 function validateAuth(auth) {
     const schema = Joi.object({
         email: Joi.string().min(6).max(255).email().required(),
@@ -22,7 +22,7 @@ function validateAuth(auth) {
     return schema.validate(auth);
 }
 
-// Export the Auth model and validation function
+// ייצוא המודל Auth ופונקציית הולידציה
 module.exports = {
     Auth,
     validateAuth

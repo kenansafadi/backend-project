@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 const Joi = require('joi');
 
-// Define Address Schema
+// הגדרת סכימת הכתובת
 const addressSchema = new mongoose.Schema({
     state: {
         type: String,
@@ -34,7 +34,7 @@ const addressSchema = new mongoose.Schema({
     },
 });
 
-// Define Image Schema
+// הגדרת סכימת התמונה
 const imageSchema = new mongoose.Schema({
     url: {
         default: null,
@@ -48,11 +48,11 @@ const imageSchema = new mongoose.Schema({
     },
 });
 
-// Models for Address and Image
+// מודלים עבור כתובת ותמונה
 const Address = mongoose.model("Address", addressSchema, "addresses");
 const Image = mongoose.model("Image", imageSchema, "images");
 
-// Define Card Schema
+// הגדרת סכימת הכרטיס
 const cardSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -86,11 +86,11 @@ const cardSchema = new mongoose.Schema({
     },
     image: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Image", // Reference to the Image model
+        ref: "Image",
     },
     address: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Address", // Reference to the Address model
+        ref: "Address",
     },
     bizNumber: {
         type: Number,
@@ -109,10 +109,9 @@ const cardSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
-// Create Model for Card
 const Card = mongoose.model("Card", cardSchema, "cards");
 
-// Generate Unique Business Number
+// יצירת מספר עסק ייחודי
 async function generateBizNumber(maxRetries = 10) {
     let retries = 0;
     while (retries < maxRetries) {
@@ -126,6 +125,7 @@ async function generateBizNumber(maxRetries = 10) {
     throw new Error('Failed to generate a unique business number after multiple attempts');
 }
 
+// ולידציה לנתוני כרטיס
 const validateCard = (card, isUpdate = false) => {
     const schema = Joi.object({
         title: Joi.string().min(2).max(50).required(),
@@ -135,7 +135,7 @@ const validateCard = (card, isUpdate = false) => {
         email: Joi.string().email().required(),
         web: Joi.string().uri().required(),
         image: Joi.object({
-            url: Joi.string().uri().allow("").optional(), // Allow empty string or valid URI
+            url: Joi.string().uri().allow("").optional(),
             alt: Joi.string().allow("").optional(),
         }).optional(),
         address: Joi.object({
@@ -155,8 +155,8 @@ const validateCard = (card, isUpdate = false) => {
 
 module.exports = {
     Card,
-    Address,   // Export Address model
-    Image,     // Export Image model
+    Address,
+    Image,
     generateBizNumber,
     validateCard,
 };
